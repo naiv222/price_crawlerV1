@@ -64,6 +64,7 @@ python -m venv .venv
 .\.venv\Scripts\activate
 pip install -r requirements.txt
 python -m playwright install
+```
 
 ### requirements.txt
 
@@ -71,3 +72,5 @@ python -m playwright install
 playwright==1.48.0
 pandas==2.2.3
 python-dateutil==2.9.0.post0
+```
+
