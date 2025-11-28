@@ -52,7 +52,7 @@ Python Playwright 기반의 단위 가격/옵션 정보 자동 수집 크롤러
 
 ---
 
-## 설치 및 실행 환경
+
 
 ### Python Version  
 - Python **3.10 이상** 권장
@@ -72,5 +72,38 @@ python -m playwright install
 playwright==1.48.0
 pandas==2.2.3
 python-dateutil==2.9.0.post0
+```
+---
+
+
+## 사용 방법: 크롤링 대상 카테고리 URL 및 출력 파일명 설정
+
+본 프로젝트의 실행 구문은 crawler.py 파일 하단, 약 184번째 줄에 위치한
+if __name__ == "__main__": 블록 내에서 설정할 수 있습니다.
+
+```python
+if __name__ == "__main__":
+    crawl_category(
+        "https://prod.danawa.com/list/?cate=16249098",  # 크롤링 대상 카테고리 링크
+        "danawa_unit_result.csv"                        # 출력 CSV 파일 이름
+    )
+```
+### 첫 번째 인자
+원하는 카테고리 링크로 교체하면 해당 카테고리 전체를 자동 크롤링합니다.
+
+> 기저귀: ?cate=16249090
+> 분유: ?cate=16249096
+> 물티슈: ?cate=16249098
+
+### 두 번째 인자
+크롤링 결과를 저장할 CSV 파일 이름 문자열입니다.
+
+### 예시
+
+```python
+crawl_category(
+    "https://prod.danawa.com/list/?cate=16249090",  # 기저귀 전체 카테고리
+    "diaper_price_data.csv"                         # 저장 파일명
+)
 ```
 
